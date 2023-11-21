@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>회원가입</title>
+  </style>
+  <script defer src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="member.js" defer></script>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <h2>회원가입</h2> 
+      <form action="join.php" method="post" onsubmit="return confirm_error()"> 
+      <form action="check_duplicate.php" method="post"> 
+        <div class="form-group">
+          <!--ID 중복체크--> 
+          <div class="input-row"> 
+            <label for="email" class="input-label">ID:</label> 
+            <input type="text" id="id" name="id" required onfocus="clearDefaultValue(this)" value="example@abc.com"> 
+            <button type="button" onclick="id_duplication()" class="custom-button">ID 중복확인</button> 
+          </div>
+          <div class="error-message"><p id="duplicate_message"></p></div>
+        </div>
+          <!--회원가입-->
+        <div class="form-group"> 
+          <div class="input-row"> 
+            <label for="name" class="input-label">이름: </label> 
+            <input type="name" id="name" name="name" required> 
+          </div>
+          <div class="error-message"></div>
+          <div class="input-row"> 
+            <label for="password" class="input-label">비밀번호: </label> 
+            <input type="password" id="pw" name="pw" required> 
+          </div>
+          <div class="error-message"></div>
+          <div class="input-row">
+            <label for="password_confirm" class="input-label">비밀번호 확인:</label>
+            <input type="password" id="pw_cf"
+            name="pw_cf" required>
+          </div>
+          <div class="error-message"><p id="password_confirm_error"></p></div>
+          <div class="error-message"><p id="confirm_error"></p></div> 
+        </div>
+        <input type="submit" onclick="confirm_error()" value="회원가입" name="join"> 
+      </form>
+      </form>
+      </div>
+      <p></p>
+
+
+  </body>
+
+</html>
