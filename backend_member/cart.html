@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+</head>
+<body>
+    <?php
+    include "db.php";
+
+    // 데이터베이스에서 장바구니 정보 가져오기
+    $query = "SELECT p.title, p.price, p.image_path FROM cart c
+              JOIN product p ON c.product_id = p.id";
+    $result = mysqli_query($conn, $query);
+
+    if (mysqli_num_rows($result) > 0) {
+        echo "<h2>장바구니</h2>";
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<div>";
+            echo "<p><strong>{$row['title']}</strong></p>";
+            echo "<p><strong>가격:</strong> {$row['price']}원</p>";
+            echo "<p><img src='{$row['image_path']}' alt='{$row['title']}' width='100'></p>";
+            echo "</div>";
+        }
+    } else {
+        echo "<p>장바구니에 상품이 없습니다.</p>";
+    }
+
+    mysqli_close($conn);
+    ?>
+</body>
+</html>

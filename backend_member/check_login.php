@@ -6,8 +6,8 @@
 </head>
 <body>
    <?php
-   session_start();
-   include "db.php";
+      session_start();
+      include "db.php";
       
       //login.php에서 입력받은 id, password
       $email = $_POST['id'];
@@ -41,5 +41,5 @@
          echo "<script>location.replace('login.php');</script>";
          exit;
       }
-      ?>
-   </body>
+   ?>
+</body>

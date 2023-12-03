@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 상세 정보</title>
+</head>
+<body>
+    <?php
+    include "db.php";
+
+    // GET 매개변수로 전달된 상품 ID 가져오기
+    $product_id = $_GET['id'];
+
+    // 데이터베이스에서 해당 상품 정보 가져오기
+    $query = "SELECT * FROM product WHERE id = $product_id";
+    $result = mysqli_query($conn, $query);
+
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+
+        echo "<h2>{$row['title']}</h2>";
+        echo "<p><strong>가격:</strong> {$row['price']}원</p>";
+        echo "<p><strong>내용:</strong> {$row['content']}</p>";
+        echo "<p><img src='{$row['image_path']}' alt='{$row['title']}' width='200'></p>";
+        echo "<a href='product_list.html'>상품 목록으로 돌아가기</a><br>";
+        echo "<form action='cart.php' method='post'>";
+        echo "<input type='hidden' name='product_id' value='{$product_id}'>";
+        echo "<button type='submit'>장바구니에 추가</button>";
+        echo "</form>";
+    } else {
+        echo "상품을 찾을 수 없습니다.";
+    }
+
+    mysqli_close($conn);
+    ?>
+</body>
+</html>

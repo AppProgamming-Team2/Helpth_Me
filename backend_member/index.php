@@ -12,7 +12,8 @@ if(!isset($_SESSION['username'])) {
 else {
     $username = $_SESSION['username'];
     $name = $_SESSION['name'];
-} 
+}
+ 
 ?>
 <body>
     <div class="base">
