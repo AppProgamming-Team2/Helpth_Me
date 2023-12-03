@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>회원가입</title>
-    <script defer src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="member.js" defer></script>
+  </style>
+  <script defer src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="member.js" defer></script>
+
+
   </head>
   <body>
     <div class="container">
@@ -14,7 +17,7 @@
         <div class="form-group">
           <!--ID 중복체크--> 
           <div class="input-row"> 
-            <label for="email" class="input-label">ID:</label> 
+            <label for="id" class="input-label">ID:</label> 
             <input type="text" id="id" name="id" required onfocus="clearDefaultValue(this)" value="example@abc.com"> 
             <button type="button" onclick="id_duplication()" class="custom-button">ID 중복확인</button> 
           </div>
