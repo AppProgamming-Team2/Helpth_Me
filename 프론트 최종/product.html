@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,109 +17,25 @@
     body {
       margin: 0;
       font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'Orbit', sans-serif;
       font-family: 'Poppins', sans-serif;
       background: #F3F3FD;
       box-shadow: 9px 17px 11px 0px rgba(255, 255, 255, 0.35);
     }
 
-    .topnav {
-      overflow: hidden;
-      /* background-color: #333; */
-      font-family: 'Noto Sans KR', sans-serif;
-    }
-
-    .topnav img {
-      float: left;
-      margin-right: 20px;
-    }
-
-    .topnav a {
-      float: right;
-      display: block;
-      color: #565148;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-    .topnav a.active {
-      /* background-color: #04AA6D; */
-      color: #333;
-    }
-
-    .topnav .icon {
-      display: none;
-    }
-
-
-    @media screen and (max-width: 600px) {
-      .product_view {
-        display: block;
-    flex-direction: column;
-    padding: 0;
-    width: 100%;
-  }
-  .product_view .img{
-    display: block;
-    position: static;
-    padding: 0;
-  }
-
-  .product_view .detailInfo {
-    display: block;
-    text-align: center;
-  }
-      .topnav img {
-          float: none;
-          margin-right: 0;
-        }
-
-        .topnav a:not(:first-child) {
-          float: none;
-          display: none;
-        }
-
-        .topnav a.icon {
-          float: right;
-          display: block;
-        }
-      }
-      .topnav.responsive {
-        padding-left: 0px;
-        margin-top: 0px;
-        margin-left: 0px;
-        position: relative;
-      }
-
-      .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-
-      .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
-      
     .recommend-title {
-      font-family: 'Noto Sans KR', sans-serif; /* 폰트 변경 */
+        font-family: 'Noto Sans KR', sans-serif; /* 폰트 변경 */
         font-weight: bold; /* 글자 굵기 추가 */
         font-size: 40px; /* 원하는 크기로 조절 */
+        font-family: 'Noto Sans KR', sans-serif;
         padding: 25px; 
     }
 
     .subhead {
-      font-family: 'Noto Sans KR', sans-serif; /* 폰트 변경 */
+        font-family: 'Noto Sans KR', sans-serif; /* 폰트 변경 */
         font-weight: bold; /* 글자 굵기 추가 */
         font-size: 20px; /* 원하는 크기로 조절 */
+        font-family: 'Noto Sans KR', sans-serif;
         padding: 25px;
     }
 
@@ -187,6 +103,52 @@
         font-size: 70px; /* 원하는 크기로 조절 */
     }
 
+    .topnav {
+      overflow: hidden;
+      /* background-color: #333; */
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .topnav img {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .topnav a {
+      float: right;
+      display: block;
+      color: #565148;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      /* background-color: #04AA6D; */
+      color: #333;
+    }
+
+    .topnav .icon {
+      display: none;
+    }
+
+   \ */
+
+      .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+
+
+
     .BasicInfo {
       width: 90%;
       height: 148px;
@@ -205,99 +167,47 @@
     }
 
     
-    .recommend-title {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 17px;
-      font-weight: bold;
-      margin-left: 40px;
-      margin-bottom: 30px;
-      text-align: left;
-    }
+div.gallery {
+  margin: 10px;
+  /* border: 1px solid #ccc; */
+  height: auto;
+}
 
-    div.gallery {
-      margin: 10px;
-      /* border: 1px solid #ccc; */
-      height: auto;
-    }
+div.gallery:hover {
+  border-radius: 42.649px;
+  border: 1px solid #777;
+}
 
-    div.gallery:hover {
-      border-radius: 42.649px;
-      border: 1px solid #777;
-    }
+div.gallery img {
 
-    div.gallery img {
+  border-radius: 42.649px;
+  width: 100%;
+  height: 400px;
+}
 
-      border-radius: 42.649px;
-      width: 100%;
-      height: 400px;
-    }
+div.desc {
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 15px;
+  text-align: left;
+}
 
-    div.desc {
-      font-family: 'Noto Sans KR', sans-serif;
-      padding: 15px;
-      text-align: left;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    * {
-      box-sizing: border-box;
-    }
-
-    .galleryresponsive {
-      padding: 0 6px;
-      float: left;
-      width: 24.99999%;
-    }
-
-    @media only screen and (max-width: 700px) {
-      .responsive {
-        width: 49.99999%;
-        margin: 6px 0;
-      }
-    }
-
-    @media only screen and (max-width: 500px) {
-      .galleryresponsive {
-        width: 100%;
-      }
-    }
-
-    @media only screen and (max-width: 500px) {
-      .responsive {
-        width: 100%;
-      }
-    }
-
-    .clearfix:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    @media screen and (max-width: 600px) {
-    .footer-container {
-      display: flex;
-      flex-direction: column; /* 세로 방향으로 정렬 */
-      align-items: center; /* 가운데 정렬 */
-    }
-
-    .footer-container .logo {
-      display: block;
-      padding: 2%;
-    }
-
-    .footer-container .info {
-      display: block;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
 
 .Aboutuser h2 span {
         color: rgb(81, 121, 255); /* 파란색으로 변경 */
     }
     .product_view {
-        box-sizing: border-box; display: flex;
+        padding: 0 0 0 395px; width : 918px; box-sizing: border-box;
     }
-    .product_view .img {margin: 40px 30px 0 30px; padding-top: 40px; left:60px; top:120px; height: auto;}
+    .product_view .img { position: absolute; left:60px; top:120px; width: 100%; height: auto;}
     .product_view h2{ padding: 0 0 20px; border-bottom:2px solid #333; font-size: 24px;}
     .product_view table th,
     .product_view table td{ padding: 14px; font-size: 15px; text-align: left;}
@@ -309,7 +219,12 @@
     line-height:42px; font-size:16px; color:#fff; }
     .product_view .btns > a.btn1 { background: #666; }
     .product_view .btns > a.btn2 { background: #0a56a9; }
-    
+
+    /* @media screen and (max-width: 600px) {
+        .table tr th :nth-child(4), table tr td:nth-child(4){
+        }
+        
+    } */
     .hr {
         margin-top: 1000px; /* 수평선 위쪽 간격 조절 */
         margin-bottom: 20px; /* 수평선 아래쪽 간격 조절 */
@@ -318,25 +233,29 @@
 
 <body>
 
-    <div class="topnav" id="myTopnav">
-        <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/Logo.png?raw=true" alt="Logo" width="auto" height="50" style="margin-left: 20px; margin-top: 10px;">
-        <a href="login.html" style="font-family: 'Poppins'; color:white; background: linear-gradient(96deg, #3A8EF6 -10.84%, #6F3AFA 196.74%);" id="loginbtn"><b>Log In</b></a>
-        <a href="QnA.html">제품 문의</a>
-        <a href="#down">감량</a>
-        <a href="#up">증량</a>
-        <a href="#home" class="active">HOME</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
+  <div class="topnav" id="myTopnav">
+    <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/Logo.png?raw=true" alt="Logo" width="auto" height="50" style="margin-left: 20px; margin-top: 10px;">
+    <a href="login.html" style="padding: 14px 16px; font-family: 'Poppins'; color:white; background: linear-gradient(96deg, #3A8EF6 -10.84%, #6F3AFA 196.74%);" id="loginbtn"><b>Log In</b></a>
+    <a href="mypage.html">
+      <img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/si_User_alt_4.svg" 
+      style="width: 27px; padding: 0;" class="menuIcon">
+    </a>
+    <a href="QnA.html">
+      <img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/Group%20237489.svg" style="width: 25px; padding: 0;" class="menuIcon">
+    </a>
+    <a href="basket.html">
+      <img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/Shopping%20Bag.svg" style="width: 25px; padding: 0;" class="menuIcon">
+    </a>
+    <a href="mainpage.html" class="active">
+      <img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/si_Home.svg" style="width: 30px; padding: 0;" class="menuIcon">
+    </a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  
 
     <div class="product_view">
-      <div class="img">
-        <!-- <div class="detailImage"></div> -->
-        <!-- <a target="_blank" href="img_5terre.jpg"></a> -->
-        <img src="image/protein.jpg" alt="" height="400" width="300">      
-    </div>
-    <div class="detailInfo">
         <h2>식사대용 단백질 쉐이크 40g</h2>
         <table>
             <caption>
@@ -376,19 +295,23 @@
                 </tr>
             </tbody>
         </table>
-        
-        <div class="btns">
-            <a herf="#a" class="btn1" onClick="location.href='mainpage.html'">장바구니</a>
-            <a herf="#a" class="btn2" onClick="location.href='mainpage.html'">주문하기</a>
+        <div class="img">
+            <div class="gallery"></div>
+            <a target="_blank" href="img_5terre.jpg"></a>
+            <img src="image/protein.jpg" alt="">
+           
         </div>
-      </div>
+        <div class="btns">
+            <a herf="#a" class="btn1" onclick="location.href='basket.html'">장바구니</a>
+            <a herf="#a" class="btn2" onclick="location.href='order.html'">주문하기</a>
+        </div>
     </div>
 
                  
 <div class="recommend-title">고객님을 위한 추천상품</div>
               
               <!-- 추천 탭 -->
-              <div class="galleryresponsive">
+              <div class="responsive">
                 <div class="gallery">
                   <a target="_blank" href="img_5terre.jpg">
                     <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/food1.jpeg?raw=true" alt="Cinque Terre" width="600" height="400">
@@ -397,7 +320,7 @@
                   <div class="subdesc">간단한 제품 설명입니다.</div></div>
                 </div>
               </div>
-              <div class="galleryresponsive">
+              <div class="responsive">
                 <div class="gallery">
                   <a target="_blank" href="img_5terre.jpg">
                     <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/food1.jpeg?raw=true" alt="Cinque Terre" width="600" height="400">
@@ -407,7 +330,7 @@
                 </div>
               </div>
             
-              <div class="galleryresponsive">
+              <div class="responsive">
                 <div class="gallery">
                   <a target="_blank" href="img_lights.jpg">
                     <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/food3.jpeg?raw=true" alt="Northern Lights" width="600" height="400">
@@ -417,7 +340,7 @@
                 </div>
             </div>
 
-            <div class="galleryresponsive">
+            <div class="responsive">
                 <div class="gallery">
                   <a target="_blank" href="img_mountains.jpg">
                     <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/food1.jpeg?raw=true" alt="Mountains" width="600" height="400">
@@ -464,6 +387,7 @@
     </div>
   </div> 
 </footer>
+
 
 
   <script>
