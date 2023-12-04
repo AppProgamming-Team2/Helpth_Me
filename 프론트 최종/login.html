@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kor">
 
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,31 +12,63 @@
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-  body {
-  margin: 0;
-  line-height: normal;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-:root {
-  /* fonts */
-  --font-poppins: Poppins;
-  --font-inter: Inter;
+    body {
+      margin: 0;
+      line-height: normal;
+      background-color: #f3f3fd;
+      font-family: 'Noto Sans KR'
+    }
 
-  /* font sizes */
-  --font-size-6xl-4: 25.4px;
+    :root {
+      /* fonts */
+      --font-poppins: Poppins;
+      --font-inter: Inter;
 
-  /* Colors */
-  --color-white: #fff;
-  --color-aliceblue: #c;
-  --color-dimgray-100: #565148;
+      /* font sizes */
+      --font-size-6xl-4: 25.4px;
 
-  /* Border radiuses */
-  --br-3xs-8: 9.8px;
-  --br-11xs-1: 1.1px;
-}
-footer {
-      left: 0;
-      bottom: 0;
+      /* Colors */
+      --color-white: #fff;
+      --color-aliceblue: #c;
+      --color-dimgray-100: #565148;
+
+      /* Border radiuses */
+      --br-3xs-8: 9.8px;
+      --br-11xs-1: 1.1px;
+    }
+
+    table {
+      border-collapse: collapse;
+      border: 1px solid black;
+      width: 95%;
+      /* 원하는 너비로 조절 */
+      color: #575757;
+      font-family: 'Noto Sans KR', sans-serif;
+      margin-left: 40px;
+      margin-bottom: 60px;
+      margin-top: 60px;
+    }
+
+    th,
+    td {
+      text-align: center;
+      padding: 8px;
+    }
+
+    .formargin th {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    footer {
+      position: relative;
+      /* 변경된 부분 */
+      bottom: -95px;
+      /* 원하는 만큼의 여백으로 조절 */
       color: #4F555A;
       padding: 20px;
       margin-top: 0.5px;
@@ -49,7 +82,7 @@ footer {
       align-items: center;
     }
 
-    .footer-container .logo{
+    .footer-container .logo {
       display: flex;
       padding: 50px;
     }
@@ -64,6 +97,7 @@ footer {
     .footer-container .info div {
       font-family: 'Noto Sans KR', sans-serif;
     }
+
     .topnav {
       overflow: hidden;
       /* background-color: #333; */
@@ -85,10 +119,6 @@ footer {
       font-size: 17px;
     }
 
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
 
     .topnav a.active {
       /* background-color: #04AA6D; */
@@ -98,24 +128,26 @@ footer {
     .topnav .icon {
       display: none;
     }
+
     @media screen and (max-width: 600px) {
-      #loginbtn{
+      #loginbtn {
         display: none;
       }
+
       .topnav img {
-          float: none;
-          margin-right: 0;
-        }
+        float: none;
+        margin-right: 0;
+      }
 
-        .topnav a:not(:first-child) {
-          float: none;
-          display: none;
-        }
+      .topnav a:not(:first-child) {
+        float: none;
+        display: none;
+      }
 
-        .topnav a.icon {
-          float: right;
-          display: block;
-        }
+      .topnav a.icon {
+        float: right;
+        display: block;
+      }
 
       .topnav.responsive {
         padding-left: 0px;
@@ -136,384 +168,458 @@ footer {
         text-align: left;
       }
 
-      .table{
+      .table {
         margin: 0 auto;
         margin-bottom: 60px;
         width: 90%;
         border-radius: 20px;
       }
+
       .table th:nth-child(2) {
         display: none;
       }
-      #tableCategory{
+
+      #tableCategory {
         display: none;
       }
 
     }
 
-.group-child {
-  position: absolute;
-  height: 62.18%;
-  width: 18.36%;
-  top: 16.67%;
-  right: 81.64%;
-  bottom: 21.15%;
-  left: 0;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-}
-.frame-child {
-  position: absolute;
-  top: 7px;
-  left: 7px;
-  width: 18.3px;
-  height: 18.3px;
-}
-.frame-item,
-.frame-wrapper {
-  position: absolute;
-  top: 0;
-  left: 211px;
-  width: 32.4px;
-  height: 32.4px;
-}
-.frame-item {
-  top: 11px;
-  left: 140px;
-  border-radius: 50%;
-  background: linear-gradient(96.14deg, #001a76, #6f3afa);
-  box-shadow: 0 5.4px 25.66px rgba(22, 120, 242, 0.2),
-    0 5.4px 5.4px rgba(0, 0, 0, 0.12) inset;
-  width: 25px;
-  height: 25px;
-}
-.frame-parent,
-.group-parent {
-  position: absolute;
-  top: 0;
-  left: 67px;
-  width: 243.4px;
-  height: 78px;
-}
-.group-parent {
-  height: 7.62%;
-  width: 21.56%;
-  top: 5.57%;
-  right: 70.53%;
-  bottom: 86.82%;
-  left: 7.92%;
-}
-.background-icon {
-  position: absolute;
-  top: 9.1px;
-  left: 196.1px;
-  width: 1046.8px;
-  height: 1014.9px;
-}
-.home {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 21.6px;
-  color: #404040;
-}
-.div,
-.div1,
-.div2 {
-  position: absolute;
-  top: 9.8px;
-  left: 212.9px;
-  display: flex;
-  align-items: center;
-  width: 63px;
-  height: 12px;
-}
-.div1,
-.div2 {
-  top: 4px;
-  left: 317px;
-  width: 132px;
-  height: 24px;
-}
-.div2 {
-  top: 10px;
-  left: 108px;
-  width: 63px;
-  height: 12px;
-}
-.home-parent {
-  position: relative;
-  width: 449px;
-  height: 32px;
-}
-.b,
-.nav-menu {
-  position: absolute;
-}
-.nav-menu {
-  top: 80px;
-  left: 706px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 25.38px;
-  color: var(--color-dimgray-100);
-}
-.b {
-  top: 309px;
-  left: 515.4px;
-  font-size: 45.77px;
-  line-height: 75.75px;
-  display: inline-block;
-  color: #000;
-  width: 406.8px;
-  height: 70.3px;
-  font-family: Poppins;
-}
-.enter-name-child {
-  position: absolute;
-  height: 77.84%;
-  width: 100%;
-  top: 10.42%;
-  right: 0;
-  bottom: 11.74%;
-  left: 0;
-  border-radius: 9.84px;
-  background-color: var(--color-aliceblue);
-}
-.div3,
-.x-icon {
-  position: absolute;
-}
-.div3 {
-  top: 0;
-  left: 5.01%;
-  letter-spacing: 0.09em;
-  line-height: 75.75px;
-  font-weight: 500;
-}
-.x-icon {
-  height: 31.13%;
-  width: 6%;
-  top: 18%;
-  right: 5.74%;
-  bottom: 35.09%;
-  left: 88.26%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-  cursor: pointer;
-}
-.enter-name {
-  position: absolute;
-  top: 412px;
-  left: 515px;
-  width: 393.5px;
-  height: 75.8px;
-  font-size: 17.71px;
-  color: #4f555a;
-}
-.div4,
-.x-icon1 {
-  position: absolute;
-  top: 33.77%;
-}
-.div4 {
-  left: 5.01%;
-  line-height: 23.61px;
-}
-.x-icon1 {
-  height: 31.13%;
-  width: 6%;
-  right: 8%;
-  bottom: 35.09%;
-  left: 88.01%;
-  top: 20%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-  cursor: pointer;
-}
-.password {
-  position: absolute;
-  top: 490.7px;
-  left: 515px;
-  width: 393.5px;
-  height: 75.8px;
-  font-size: 25.58px;
-  color: #667085;
-  font-family: var(--font-inter);
-}
-.button-sign-in-child {
-  position: absolute;
-  top: 9.8px;
-  left: 0;
-  border-radius: 9.88px;
-  background-color: #4461f2;
-  box-shadow: 0 11.9px 20.74px 3.95px rgba(68, 97, 242, 0.15);
-  width: 395px;
-  height: 59.3px;
-}
-.b1 {
-  position: absolute;
-  top: 0;
-  left: 172.9px;
-  letter-spacing: 0.09em;
-  line-height: 76.04px;
-  font-family: Poppins;
-}
-.button-sign-in {
-  top: 599px;
-  left: 516px;
-  width: 395px;
-  height: 77px;
-  font-size: 18.76px;
-}
-.b2,
-.button-sign-in,
-.register {
-  position: absolute;
-}
-.b2 {
-  top: 9.4px;
-  left: 22.7px;
-  letter-spacing: 0.06em;
-  display: inline-block;
-  width: 73.1px;
-  height: 15.8px;
-}
-.register {
-  top: 75px;
-  left: 1187px;
-  border-radius: 14.51px;
-  background: linear-gradient(96.14deg, #3a8ef6, #6f3afa);
-  width: 110.6px;
-  height: 41.5px;
-  font-size: 16.79px;
-}
-.web-login {
-  position: relative;
-  background-color: #f3f3fd;
-  width: 100%;
-  height: 1024px;
-  overflow: hidden;
-  text-align: left;
-  font-size: 30px;
-  color: var(--color-white);
-  font-family: Poppins;
-}
-.enter-name input,
-  .password input {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    box-sizing: border-box;
-    border: 1px solid #EAF0F7;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: Poppins;
-  }
+    @media screen and (max-width: 600px) {
+      .topnav.responsive {
+        position: relative;
+      }
 
-  .button-sign-in {
-    background-color: #4461f2;
-    box-shadow: 0 11.9px 20.74px 3.95px rgba(68, 97, 242, 0.15);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-family: Poppins;
-    cursor: pointer;
-  }
+      .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      .table {
+        margin: 0 auto;
+        margin-bottom: 60px;
+        width: 90%;
+        border-radius: 20px;
+      }
+
+      .table th:nth-child(2) {
+        display: none;
+      }
+
+      #tableCategory {
+        display: none;
+      }
+
+    }
+
+    @media screen and (max-width: 600px) {
+      .footer-container {
+        display: flex;
+        flex-direction: column;
+        /* 세로 방향으로 정렬 */
+        align-items: center;
+        /* 가운데 정렬 */
+      }
+
+      .footer-container .logo {
+        display: block;
+        padding: 2%;
+      }
+
+      .footer-container .info {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+      }
 
 
-@media screen and (max-width: 600px) {
-  .enter-name,
-  .password,
-  .button-sign-in {
-    width: 100%;
-    margin: 0 auto;
-  }
+      .group-child {
+        position: absolute;
+        height: 62.18%;
+        width: 18.36%;
+        top: 16.67%;
+        right: 81.64%;
+        bottom: 21.15%;
+        left: 0;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
 
-  .button-sign-in {
-    font-size: 16px;
-  }
+      .frame-child {
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        width: 18.3px;
+        height: 18.3px;
+      }
 
-  .enter-name,
-  .password,
-  .button-sign-in,
-  #loginForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+      .frame-item,
+      .frame-wrapper {
+        position: absolute;
+        top: 0;
+        left: 211px;
+        width: 32.4px;
+        height: 32.4px;
+      }
 
-  .enter-name input,
-  .password input {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    box-sizing: border-box;
-    border: 1px solid #EAF0F7;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: Poppins;
-  }
-}
+      .frame-item {
+        top: 11px;
+        left: 140px;
+        border-radius: 50%;
+        background: linear-gradient(96.14deg, #001a76, #6f3afa);
+        box-shadow: 0 5.4px 25.66px rgba(22, 120, 242, 0.2),
+          0 5.4px 5.4px rgba(0, 0, 0, 0.12) inset;
+        width: 25px;
+        height: 25px;
+      }
 
+      .frame-parent,
+      .group-parent {
+        position: absolute;
+        top: 0;
+        left: 67px;
+        width: 243.4px;
+        height: 78px;
+      }
 
+      .group-parent {
+        height: 7.62%;
+        width: 21.56%;
+        top: 5.57%;
+        right: 70.53%;
+        bottom: 86.82%;
+        left: 7.92%;
+      }
 
+      .background-icon {
+        position: absolute;
+        top: 9.1px;
+        left: 196.1px;
+        width: 1046.8px;
+        height: 1014.9px;
+      }
 
+      .home {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 21.6px;
+        color: #404040;
+      }
 
+      .div,
+      .div1,
+      .div2 {
+        position: absolute;
+        top: 9.8px;
+        left: 212.9px;
+        display: flex;
+        align-items: center;
+        width: 63px;
+        height: 12px;
+      }
 
+      .div1,
+      .div2 {
+        top: 4px;
+        left: 317px;
+        width: 132px;
+        height: 24px;
+      }
 
+      .div2 {
+        top: 10px;
+        left: 108px;
+        width: 63px;
+        height: 12px;
+      }
+
+      .home-parent {
+        position: relative;
+        width: 449px;
+        height: 32px;
+      }
+
+      .b,
+      .nav-menu {
+        position: absolute;
+      }
+
+      .nav-menu {
+        top: 80px;
+        left: 706px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 25.38px;
+        color: var(--color-dimgray-100);
+      }
+
+      .b {
+        top: 309px;
+        left: 515.4px;
+        font-size: 45.77px;
+        line-height: 75.75px;
+        display: inline-block;
+        color: #000;
+        width: 406.8px;
+        height: 70.3px;
+        font-family: Poppins;
+      }
+
+      .enter-name-child {
+        position: absolute;
+        height: 77.84%;
+        width: 100%;
+        top: 10.42%;
+        right: 0;
+        bottom: 11.74%;
+        left: 0;
+        border-radius: 9.84px;
+        background-color: var(--color-aliceblue);
+      }
+
+      .div3,
+      .x-icon {
+        position: absolute;
+      }
+
+      .div3 {
+        top: 0;
+        left: 5.01%;
+        letter-spacing: 0.09em;
+        line-height: 75.75px;
+        font-weight: 500;
+      }
+
+      .x-icon {
+        height: 31.13%;
+        width: 6%;
+        top: 18%;
+        right: 5.74%;
+        bottom: 35.09%;
+        left: 88.26%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+        cursor: pointer;
+      }
+
+      .enter-name {
+        position: absolute;
+        top: 412px;
+        left: 515px;
+        width: 393.5px;
+        height: 75.8px;
+        font-size: 17.71px;
+        color: #4f555a;
+      }
+
+      .div4,
+      .x-icon1 {
+        position: absolute;
+        top: 33.77%;
+      }
+
+      .div4 {
+        left: 5.01%;
+        line-height: 23.61px;
+      }
+
+      .x-icon1 {
+        height: 31.13%;
+        width: 6%;
+        right: 8%;
+        bottom: 35.09%;
+        left: 88.01%;
+        top: 20%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+        cursor: pointer;
+      }
+
+      .password {
+        position: absolute;
+        top: 490.7px;
+        left: 515px;
+        width: 393.5px;
+        height: 75.8px;
+        font-size: 25.58px;
+        color: #667085;
+        font-family: var(--font-inter);
+      }
+
+      .button-sign-in-child {
+        position: absolute;
+        top: 9.8px;
+        left: 0;
+        border-radius: 9.88px;
+        background-color: ;
+        box-shadow: 0 11.9px 20.74px 3.95px rgba(68, 97, 242, 0.15);
+        width: 395px;
+        height: 59.3px;
+      }
+
+      .b1 {
+        position: absolute;
+        top: 0;
+        left: 172.9px;
+        letter-spacing: 0.09em;
+        line-height: 76.04px;
+        font-family: Poppins;
+      }
+
+      .button-sign-in {
+        top: 599px;
+        left: 516px;
+        width: 395px;
+        height: 77px;
+        font-size: 18.76px;
+      }
+
+      .b2,
+      .button-sign-in,
+      .register {
+        position: absolute;
+      }
+
+      .b2 {
+        top: 9.4px;
+        left: 22.7px;
+        letter-spacing: 0.06em;
+        display: inline-block;
+        width: 73.1px;
+        height: 15.8px;
+      }
+
+      .web-login {
+        position: relative;
+        background-color: #f3f3fd;
+        width: 100%;
+        height: 1024px;
+        overflow: hidden;
+        text-align: left;
+        font-size: 30px;
+        color: var(--color-white);
+        font-family: 'Noto Sans KR';
+      }
+
+      .movesignUp{
+        font-size: 15px;
+        color: black;
+        font-family: 'Noto Sans KR';
+      }
   </style>
-  <body>
-    <div class="web-login">
-      <div class="group-parent">
-        <div class="frame-parent">
-          <div class="frame-wrapper">
-            <div class="frame-child"></div>
-          </div>
+</head>
 
+<body>
+  <div class="web-login">
+    <div class="group-parent">
+      <div class="frame-parent">
+        <div class="frame-wrapper">
+          <div class="frame-child"></div>
         </div>
+
       </div>
-      <img class="background-icon" alt="" img src="https://github.com/kimchaeyeonn/App_prog_source/blob/main/background.svg?raw=true" />
+    </div>
+
 
   <div class="topnav" id="myTopnav">
     <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/Logo.png?raw=true" alt="Logo" width="auto"
       height="50" style=" margin-left: 20px; margin-top: 10px;">
-    <a href="Register.html" style="font-family: 'Poppins'; color:white; background: linear-gradient(96deg, #3A8EF6 -10.84%, #6F3AFA 196.74%);" id="loginbtn"><b>Register</b></a>
-    <a href="QnA.html">제품 문의</a>
-    <a href="#down">감량</a>
-    <a href="#up">증량</a>
-    <a href="main.html" class="active">HOME</a>
+    <a href="login.html"
+      style="padding: 14px 16px; font-family: 'Poppins'; color:white; background: linear-gradient(96deg, #3A8EF6 -10.84%, #6F3AFA 196.74%);"
+      id="loginbtn"><b>Log In</b></a>
+    <a href="mypage.html"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/si_User_alt_4.svg" style="width: 27px; padding: 0;" class="menuIcon"></a>
+    <a href="QnA.html"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/Group%20237489.svg" style="width: 25px; padding: 0;" class="menuIcon"></a>
+    <a href="basket.html"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/Shopping%20Bag.svg" style="width: 25px; padding: 0;" class="menuIcon"></a>
+    <a href="mainpage.html" class="active"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/si_Home.svg" style="width: 30px; padding: 0;" class="menuIcon"></a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
+  </div>
+
+    <style>
+      html,
+      body {
+        width: 100%;
+      }
+
+      .login_form {
+        margin-top: calc(20vh - 60px);
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px;
+      }
+
+      .login_form .welcome {
+        font-size: 20px;
+        color: #000;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .form {}
+
+      .form .ip {}
+
+      .form .ip input[type="text"],
+      .form .ip input[type="password"] {
+        width: 100%;
+        border: 0;
+        height: 55px;
+        padding-left: 10px;
+        border-radius: 5px;
+      }
+
+      .form .ip+.ip {
+        margin-top: 10px;
+      }
+
+      .form_submit {
+        margin-top: 20px;
+        width: 100%;
+        height: 65px;
+        background-color: #4461F2;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+    </style>
+    <div class="login_form" style="margin-top: 200px;">
+      <div class="welcome">돌아오신 걸 환영합니다!</div>
+      <div
+        style="z-index: -1; width: 423.03px; height: 346.65px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -30%);">
+        <div
+          style="z-index: -1; width: 100px; height: 100px; position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: #4461F2; box-shadow: 311.8618469238281px 311.8618469238281px 311.8618469238281px; border-radius: 9999px; filter: blur(50px)">
+        </div>
       </div>
-      <b class="b">환영합니다</b>
-
-<form id="loginForm">
-  <div class="enter-name">
-    <input type="text" id="emailInput" placeholder="이메일 주소를 입력하세요." />
-    <img class="x-icon" alt="" src="https://github.com/kimchaeyeonn/App_prog_source/blob/main/x-icon.svg?raw=true" />
-  </div>
-  <div class="password">
-    <input type="password" id="passwordInput" placeholder="비밀번호를 입력하세요." />
-    <img class="x-icon1" alt="" src="https://github.com/kimchaeyeonn/App_prog_source/blob/main/x-icon1.svg?raw=true" />
-  </div>
-  <button type="button" class="button-sign-in" onclick="submitForm()">로그인</button>
-</form>
-
-
-
-
-
-
+      <div class="form">
+        <form action="">
+          <div class="ip"><input type="text" placeholder="이메일 주소를 입력하세요."></div>
+          <div class="ip"><input type="password" placeholder="비밀번호를 입력하세요."></div>
+          <button type="button" class="form_submit">로그인</button>
+        </form>
+        <div class="movesignUp">아직 회원이 아니라면? <a href="register.html">회원가입하기</a></div>
       </div>
     </div>
-    <script>
+
+  </div>
+</body>
+</div>
+</div>
+<script>
   function submitForm() {
     var email = document.getElementById("emailInput").value;
     var password = document.getElementById("passwordInput").value;
@@ -524,21 +630,29 @@ footer {
 </script>
 
 <footer>
-    <div class="footer-container">
-      <div class="logo">
-        <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/Logo.png?raw=true" alt="Logo" width="183px"
-          height="50">
-      </div>
-      <div class="info">
-        <div style="color: #1678F2;"><b>문의</b></div><br>
-        <div>hihello@sungkyul.ac.kr</div>
-        <div>010 - 1234 - 5678</div>
-        <div>경기도 안양시 만안구 성결대학로 53</div>
-      </div>
+  <div class="footer-container">
+    <div class="logo">
+      <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/Logo.png?raw=true" alt="Logo" width="183px"
+        height="50">
     </div>
-    <p style="font-size: 15px; border-top: 1px solid gray; padding-top: 5px; font-family: Poppins;">© 2023 HELPTH ME. All rights reserved.
-    </p>
-  </footer>
+    <div class="info">
+      <div style="color: #1678F2;"><b>문의</b></div><br>
+      <div>hihello@sungkyul.ac.kr</div>
+      <div>010 - 1234 - 5678</div>
+      <div>경기도 안양시 만안구 성결대학로 53</div>
+    </div>
+  </div>
+  </div>
+  <p style="font-size: 15px; border-top: 1px solid gray; padding-top: 5px; font-family: Poppins;">© 2023 HELPTH ME. All
+    rights reserved.
+  </p>
+</footer>
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav"); if (x.className === "topnav") {x.className += " responsive";} else {x.className = "topnav";}
+  } 
+</script>
 
-  </body>
+</body>
+
 </html>

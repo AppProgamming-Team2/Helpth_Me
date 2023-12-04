@@ -28,9 +28,9 @@
     }
 
 .productOrder {
-  background-color: black;
+  background: linear-gradient(96deg, #3A8EF6 -10.84%, #6F3AFA 196.74%);
   border-collapse: collapse;
-  border: 1px solid black;
+  border-radius: 10px 10px;
   width: 100%;
   color: white;
   font-family: 'Noto Sans KR', sans-serif;
@@ -69,7 +69,7 @@
       border: 1px solid black;
       width: 95%;
       /* 원하는 너비로 조절 */
-      color: #575757;
+      color: #616060;
       font-family: 'Noto Sans KR', sans-serif;
       margin-left: 40px;
       margin-bottom: 60px;
@@ -137,11 +137,6 @@
       padding: 14px 16px;
       text-decoration: none;
       font-size: 17px;
-    }
-
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
     }
 
     .topnav a.active {
@@ -225,20 +220,23 @@
   </style>
 </head>
 <body>
+
   <div class="topnav" id="myTopnav">
     <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/Logo.png?raw=true" alt="Logo" width="auto"
       height="50" style=" margin-left: 20px; margin-top: 10px;">
-    <a href="login.html" style="font-family: 'Poppins'; color:white; background: linear-gradient(96deg, #3A8EF6 -10.84%, #6F3AFA 196.74%);" id="loginbtn"><b>Log In</b></a>
-    <a href="QnA.html">제품 문의</a>
-    <a href="#down">감량</a>
-    <a href="#up">증량</a>
-    <a href="main.html" class="active">HOME</a>
+    <a href="login.html"
+      style="padding: 14px 16px; font-family: 'Poppins'; color:white; background: linear-gradient(96deg, #3A8EF6 -10.84%, #6F3AFA 196.74%);"
+      id="loginbtn"><b>Log In</b></a>
+    <a href="mypage.html"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/si_User_alt_4.svg" style="width: 27px; padding: 0;" class="menuIcon"></a>
+    <a href="QnA.html"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/Group%20237489.svg" style="width: 25px; padding: 0;" class="menuIcon"></a>
+    <a href="basket.html"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/Shopping%20Bag.svg" style="width: 25px; padding: 0;" class="menuIcon"></a>
+    <a href="mainpage.html" class="active"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/si_Home.svg" style="width: 30px; padding: 0;" class="menuIcon"></a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
-  </div>
+  </div>  
   <div class="frame">
-    <table class="table" style="background-color: white;">
+ <table class="table" style="background-color: white; border-radius: 10px 10px;">
       <tbody>
         <tr style="border-bottom: 1px solid black;">
           <th scope="col">일반 상품(1)</th>
@@ -292,7 +290,7 @@
       </table>
     </table>
 <div class="flex-container">
-  <a href="order.html" class="productOrder">상품 주문하기</a>
+  <a href="order.html" class="productOrder">주문하기</a>
 </div>
 
     </div>
