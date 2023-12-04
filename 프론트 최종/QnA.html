@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Orbit&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'Orbit', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: #F3F3FD;
+      /* box-shadow: 9px 17px 11px 0px rgba(255, 255, 255, 0.35); */
+    }
+
+    .qna-title {
+      display: flex;
+      color: #575757;
+      font-family: Poppins;
+      font-size: 35px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 105px;
+      /* 262.5% */
+      letter-spacing: 6px;
+      align-items: center;
+      justify-content: center;
+      /* 가로 중앙 정렬 */
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 95%;
+      /* 원하는 너비로 조절 */
+      color: #575757;
+      font-family: 'Noto Sans KR', sans-serif;
+      border-radius: 35.313px;
+      background: linear-gradient(136deg, #EFEFEF 14.84%, rgba(187, 187, 187, 0.00) 100.63%);
+      box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.15);
+      margin-left: 40px;
+      margin-bottom: 60px;
+    }
+
+    th,
+    td {
+      text-align: center;
+      padding: 8px;
+    }
+
+
+
+    .topnav {
+      overflow: hidden;
+      /* background-color: #333; */
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .topnav img {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .topnav a {
+      float: right;
+      display: block;
+      color: #565148;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      /* background-color: #04AA6D; */
+      color: #333;
+    }
+
+    .topnav .icon {
+      display: none;
+    }
+
+
+    @media screen and (max-width: 600px) {
+
+      .topnav img {
+        float: none;
+        margin-right: 0;
+      }
+
+      .topnav a:not(:first-child) {
+        float: none;
+        display: none;
+      }
+
+      .topnav a.icon {
+        float: right;
+        display: block;
+      }
+    }
+
+    .topnav.responsive {
+      padding-left: 0px;
+      margin-top: 0px;
+      margin-left: 0px;
+      position: relative;
+    }
+
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+
+    .qna-title {
+      display: block;
+    }
+
+    .table {
+      margin: 0 auto;
+      margin-bottom: 60px;
+      width: 90%;
+      border-radius: 20px;
+    }
+
+    .table th:nth-child(2) {
+      display: none;
+    }
+
+    #tableCategory {
+      display: none;
+    }
+
+    footer {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  color: #4F555A;
+  padding: 20px;
+  margin-top: 150px;
+  text-align: center;
+  border-radius: 30px 30px 0 0;
+  background: var(--neutral-100, #FFF);
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+}
+
+.footer-container .logo{
+  display: flex;
+  padding: 50px;
+}
+
+.footer-container .info {
+  /* display: flex; */
+  justify-content: space-around;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.footer-container .info div {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 상품 추천 타이틀 */
+.recommend-title {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin-left: 40px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+div.gallery {
+  margin: 10px;
+  /* border: 1px solid #ccc; */
+  height: auto;
+}
+
+div.gallery:hover {
+  border-radius: 42.649px;
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  
+  border-radius: 42.649px;
+  width: 100%;
+  height: 400px;
+}
+
+div.desc {
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 15px;
+  text-align: left;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+.footer-container {
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 정렬 */
+  align-items: center; /* 가운데 정렬 */
+}
+
+.footer-container .logo {
+  display: block;
+  padding: 2%;
+}
+
+.footer-container .info {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+}
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/Logo.png?raw=true" alt="Logo" width="auto"
+      height="50" style=" margin-left: 20px; margin-top: 10px;">
+    <a href="login.html"
+      style="font-family: 'Poppins'; color:white; background: linear-gradient(96deg, #3A8EF6 -10.84%, #6F3AFA 196.74%);"
+      id="loginbtn"><b>Log In</b></a>
+    <a href="QnA.html">제품 문의</a>
+    <a href="#down">감량</a>
+    <a href="#up">증량</a>
+    <a href="mainpage.html" class="active">HOME</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <!-- 주문 처리 현황 제목 -->
+  <div class="qna-title">
+    Q & A
+  </div>
+  <!-- Q & A 테이블 -->
+  <table class="table">
+    <thead>
+      <tr style="border-bottom: 1px solid #dddddd;">
+        <th scope="col">NO.</th>
+        <th scope="col">CATEGORY</th>
+        <th scope="col">SUBJECT</th>
+        <th scope="col">NAME</th>
+        <th scope="col">DATE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #dddddd;">
+        <th scope="row"><i class="fas fa-solid fa-thumbtack"></i></th>
+        <td id="tableCategory"></td>
+        <td>[상품 Q&A] 문의합니다 :)</td>
+        <td>김OO</td>
+        <td>2023.11.17</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dddddd;">
+        <th scope="row">5</th>
+        <td id="tableCategory"></td>
+        <td>[상품 Q&A] 문의합니다 :)</td>
+        <td>김OO</td>
+        <td>2023.11.17</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dddddd;">
+        <th scope="row">4</th>
+        <td id="tableCategory"></td>
+        <td>[상품 Q&A] 문의합니다 :)</td>
+        <td>김OO</td>
+        <td>2023.11.17</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dddddd;">
+        <th scope="row">3</th>
+        <td id="tableCategory"></td>
+        <td>[상품 Q&A] 문의합니다 :)</td>
+        <td>박OO</td>
+        <td>2023.11.17</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #dddddd;">
+        <th scope="row">2</th>
+        <td id="tableCategory"></td>
+        <td>[상품 Q&A] 문의합니다 :)</td>
+        <td>이OO</td>
+        <td>2023.11.17</td>
+      </tr>
+      <tr>
+        <th scope="row">1</th>
+        <td id="tableCategory"></td>
+        <td>[상품 Q&A] 문의합니다 :)</td>
+        <td>최OO</td>
+        <td>2023.11.17</td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="newwrite" style="display: flex; text-align: center; justify-content: center; align-items: center;">
+    <a href="qnaWrite.html"
+      style=" text-decoration: none; font-family: 'Noto Sans KR'; color:white;  background: linear-gradient(96deg, #3A8EF6 -10.84%, #6F3AFA 196.74%); padding: 15px; border-radius: 5px;">새
+      문의사항 쓰기</a>
+  </div>
+  <br><br><br><br><br>
+  <div class="recommend-title">
+    요즘 뜨는 상품
+  </div>
+  <!-- 추천 탭 -->
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="product.html">
+        <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/food1.jpeg?raw=true" alt="Cinque Terre"
+          width="600" height="400">
+      </a>
+      <div class="desc"><b>제품 이름</b>
+        <div class="subdesc">간단한 제품 설명입니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="product.html">
+        <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/food2.jpeg?raw=true" alt="Forest" width="600"
+          height="400">
+      </a>
+      <div class="desc"><b>제품 이름</b>
+        <div class="subdesc">간단한 제품 설명입니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="product.html">
+        <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/food3.jpeg?raw=true" alt="Northern Lights"
+          width="600" height="400">
+      </a>
+      <div class="desc"><b>제품 이름</b>
+        <div class="subdesc">간단한 제품 설명입니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="product.html">
+        <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/food1.jpeg?raw=true" alt="Mountains" width="600"
+          height="400">
+      </a>
+      <div class="desc"><b>제품 이름</b>
+        <div class="subdesc">간단한 제품 설명입니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <!-- Site footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="logo">
+        <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/Logo.png?raw=true" alt="Logo" width="183px"
+          height="50">
+      </div>
+      <div class="info">
+        <div style="color: #1678F2;"><b>문의</b></div><br>
+        <div>hihello@sungkyul.ac.kr</div>
+        <div>010 - 1234 - 5678</div>
+        <div>경기도 안양시 만안구 성결대학로 53</div>
+      </div>
+    </div>
+    <p style="font-size: 15px; border-top: 1px solid gray; padding-top: 5px;">© 2023 HELPTH ME. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav"); if (x.className === "topnav") {x.className += " responsive";} else {x.className = "topnav";}
+    } 
+  </script>
+
+</body>
+
+</html>
