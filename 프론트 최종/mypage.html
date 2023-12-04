@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Orbit&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      /* font-family: 'Orbit', sans-serif; */
+      font-family: 'Poppins', sans-serif;
+      background: #F3F3FD;
+      /* box-shadow: 9px 17px 11px 0px rgba(255, 255, 255, 0.35); */
+    }
+
+    footer {
+      left: 0;
+      bottom: 0;
+      color: #4F555A;
+      padding: 20px;
+      margin-top: 150px;
+      text-align: center;
+      border-radius: 30px 30px 0 0;
+      background: var(--neutral-100, #FFF);
+    }
+
+    .footer-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-container .logo {
+      display: flex;
+      padding: 50px;
+    }
+
+    .footer-container .info {
+      /* display: flex; */
+      justify-content: space-around;
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    .footer-container .info div {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .Aboutuser {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin-bottom: 5%;
+    }
+
+    .Aboutuser span {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .Aboutuser button {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #6c7de7;
+      /* 버튼 배경색을 빨간색으로 지정 */
+      border-radius: 35.313px;
+      color: white;
+      /* 버튼 텍스트 색상을 흰색으로 지정 */
+      padding: 7px 14px;
+      /* 버튼 패딩을 조절 */
+      margin-left: 15px;
+      border: none;
+      /* 버튼 테두리 제거 */
+      cursor: pointer;
+      /* 마우스 호버 시 커서 모양을 포인터로 변경 */
+    }
+
+    .BasicInfo {
+      width: 90%;
+      height: 148px;
+      flex-shrink: 0;
+      margin: 20px;
+      margin-bottom: 5%;
+      /* background: linear-gradient(96deg, #3A8EF6 -10.84%, #6F3AFA 196.74%);*/
+      /* background-color: #6c7de7; */
+      /* background: linear-gradient(to right, transparent, #6c7de7, transparent); */
+      border-radius: 35.313px;
+      border-color: #3A8EF6;
+      background-color: white;
+      /* border: 1px solid #3A8EF6; */
+      box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ================== 사용자 정보 박스 시작 ==================== */
+    .UserInfoContainer {
+      width: 100%;
+      height: 100%;
+      /* padding: 35px 40px; */
+      flex: inherit;
+      /* background: white; */
+      border-color: #3A8EF6;
+      border-radius: 35.313px;
+      font-family: 'Noto Sans KR', sans-serif;
+      /* font-family: 'Orbit', sans-serif;
+      font-family: 'Poppins', sans-serif; */
+    }
+
+    /* 적립금, 사용 가능 쿠폰 [로우] */
+    .UserInfoContainer .status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 45px 0px;
+    }
+
+    /* 적립금, 사용 가능 쿠폰 [아이템]  */
+    .UserInfoContainer .item {
+      display: flex;
+      margin: 0px 70px;
+    }
+
+    .UserInfoContainer .blacknumber {
+      font-size: 31px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .UserInfoContainer .graynumber {
+      font-size: 31px;
+      font-weight: 500;
+      text-align: center;
+      color: gray;
+    }
+
+    .UserInfoContainer .text {
+      font-size: 12px;
+      font-weight: normal;
+      color: #c2c2c2;
+      text-align: center;
+    }
+
+    .UserInfoContainer .icon {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      width: 16px;
+      height: 16px;
+      font-size: 25px;
+    }
+
+    /* 주문/배송조회 타이틀 */
+    .order-title {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .ShipInfo {
+      width: 90%;
+      /* height: 148px; */
+      flex-shrink: 0;
+      margin: 20px;
+      margin-bottom: 5%;
+      background-color: white;
+      border: #3A8EF6;
+      border-radius: 35.313px;
+      /* border: 1px solid #3A8EF6; */
+      box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ================== 주문/배송조회 박스 시작 ==================== */
+    .shippingStatusContainer {
+      /* flex: inherit; */
+      width: 90%;
+      /* height: 70%; */
+      padding: 45px 40px;
+      border-radius: 35.313px;
+      font-family: 'Noto Sans KR', sans-serif;
+      /* font-family: 'Orbit', sans-serif;
+      font-family: 'Poppins', sans-serif; */
+    }
+
+    /* 장바구니 결제완료 배송중 구매확정 [로우] */
+    .shippingStatusContainer .status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-content: space-between;
+      /* margin-bottom: 21px; */
+    }
+
+    /* 장바구니 결제완료 배송중 구매확정 [아이템]  */
+    .shippingStatusContainer .item {
+      display: flex;
+    }
+
+    .shippingStatusContainer .number {
+      font-size: 31px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .shippingStatusContainer .text {
+      font-size: 12px;
+      font-weight: normal;
+      color: #c2c2c2;
+      text-align: center;
+    }
+
+    .shippingStatusContainer .icon {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      width: 16px;
+      height: 16px;
+      font-size: 25px;
+    }
+
+    /*하단 그리드*/
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      /* 3개의 열, 각 열의 너비를 화면 폭에 따라 조절 */
+      grid-template-rows: repeat(2, 1fr);
+      /* 2개의 행, 각 행의 높이를 화면 높이에 따라 조절 */
+      gap: 10px;
+      /* 그리드 아이템 간의 간격 설정 */
+      margin: 30px;
+    }
+
+    .box {
+      font-family: 'Noto Sans KR', sans-serif;
+      position: relative;
+      width: 85%;
+      height: 85%;
+      border-radius: 53.139px;
+      border: 1.5px solid #3A8EF6;
+      background-color: white;
+      box-shadow: 3.00965px 6.01929px 6.01929px 0px rgba(0, 0, 0, 0.15);
+      text-align: left;
+      padding-left: 30px;
+      padding-top: 20px;
+      padding-right: 20px;
+    }
+
+    .box::after {
+      content: "";
+      padding-bottom: 100%;
+      /* 정사각형을 만들기 위한 패딩 */
+      display: block;
+    }
+
+    .bottom-text {
+      position: absolute;
+      bottom: 16px;
+      /* 아래쪽 간격 조절 */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1em;
+      color: #838383;
+      width: 80%;
+      /* 텍스트 너비를 조절하여 가로 중앙 정렬 */
+    }
+
+    .topnav {
+      overflow: hidden;
+      /* background-color: #333; */
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .topnav img {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .topnav a {
+      float: right;
+      display: block;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .topnav a.active {
+      /* background-color: #04AA6D; */
+      color: #333;
+    }
+
+    .topnav .icon {
+      display: none;
+    }
+
+    .topnav .responsive .menuIcon :hover{
+        fill: linear-gradient(96deg, #3A8EF6 -14.31%, #6F3AFA 193.27%);
+    }
+
+
+    @media screen and (max-width: 600px) {
+
+      .topnav img {
+        float: none;
+        margin-right: 0;
+      }
+
+      .topnav a:not(:first-child) {
+        float: none;
+        display: none;
+      }
+
+      .topnav a.icon {
+        float: right;
+        display: block;
+      }
+      
+      .topnav a{
+        padding-left: 15px;
+      }
+    }
+
+    .topnav.responsive {
+      padding-left: 0px;
+      margin-top: 0px;
+      margin-left: 0px;
+      position: relative;
+    }
+
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+
+    @media screen and (max-width: 400px) {
+      .grid-container {
+        display: block;
+      }
+
+      .box {
+        width: 91%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav.responsive {
+        position: relative;
+      }
+
+      .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .footer-container {
+        display: flex;
+        flex-direction: column;
+        /* 세로 방향으로 정렬 */
+        align-items: center;
+        /* 가운데 정렬 */
+      }
+
+      .footer-container .logo {
+        display: block;
+        padding: 2%;
+      }
+
+      .footer-container .info {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .Aboutuser {
+        font-size: 14px;
+        margin-bottom: 3%;
+      }
+
+      .Aboutuser button {
+        padding: 5px 10px;
+      }
+
+      .BasicInfo {
+        height: 100px;
+      }
+
+      /* 사용자 정보 요소들에 대한 크기 조절 및 스타일 변경 */
+      .UserInfoContainer .status {
+        padding: 25px 0px;
+      }
+
+      .UserInfoContainer .item {
+        margin: 0px 30px;
+      }
+
+      .UserInfoContainer .blacknumber,
+      .UserInfoContainer .graynumber {
+        font-size: 24px;
+      }
+
+      .UserInfoContainer .text {
+        font-size: 10px;
+      }
+
+      .UserInfoContainer .icon {
+        padding: 15px;
+        font-size: 20px;
+      }
+
+      /* 주문/배송조회 요소들에 대한 크기 조절 및 스타일 변경 */
+      .shippingStatusContainer .status {
+        padding: 5px 0px;
+      }
+
+      .shippingStatusContainer .item {
+        margin: 0px 15px;
+      }
+
+      .shippingStatusContainer .status .item:first-child {
+        display: none;
+      }
+
+      .shippingStatusContainer .number {
+        font-size: 24px;
+      }
+
+      .shippingStatusContainer .text {
+        font-size: 10px;
+      }
+
+      .shippingStatusContainer .icon {
+        padding: 15px;
+        font-size: 20px;
+      }
+
+      /* 그리드 아이템들에 대한 크기 조절 및 스타일 변경 */
+      .grid-container {
+        margin: 15px;
+      }
+
+      .box {
+        margin-bottom: 15px;
+        border-radius: 40px;
+        padding-left: 15px;
+        padding-top: 10px;
+        padding-right: 10px;
+      }
+
+      .box::after {
+        content: "";
+        padding-bottom: 5%;
+        /* 정사각형을 만들기 위한 패딩 */
+        display: flex;
+      }
+
+      .bottom-text {
+        display: none;
+        font-size: 0.9em;
+      }
+
+
+    }
+
+    @media screen and (max-width: 390px) {
+      .shippingStatusContainer {
+        padding: 20px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/Logo.png?raw=true" alt="Logo" width="auto"
+      height="50" style=" margin-left: 20px; margin-top: 10px;">
+    <a href="login.html"
+      style="padding: 14px 16px; font-family: 'Poppins'; color:white; background: linear-gradient(96deg, #3A8EF6 -10.84%, #6F3AFA 196.74%);"
+      id="loginbtn"><b>Log In</b></a>
+    <a href="mypage.html"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/si_User_alt_4.svg" style="width: 27px; padding: 0;" class="menuIcon"></a>
+    <a href="QnA.html"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/Group%20237489.svg" style="width: 25px; padding: 0;" class="menuIcon"></a>
+    <a href="basket.html"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/Shopping%20Bag.svg" style="width: 25px; padding: 0;" class="menuIcon"></a>
+    <a href="mainpage.html" class="active"><img src="https://raw.githubusercontent.com/reoncord/testAppPrgm/27d6af9e16f0483a45aa10215ef6335c730383b8/img/si_Home.svg" style="width: 30px; padding: 0;" class="menuIcon"></a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="Aboutuser" style="padding-left:16px">
+    <h2>회원 이름</h2>
+    <span>GOLD</span> <button>등급별 혜택보기</button>
+  </div>
+<div style="display: flex; justify-content: center;">
+  <div class="BasicInfo">
+    <div class="UserInfoContainer">
+
+      <div class="status">
+
+        <div class="item">
+          <div>
+            <div class="blacknumber">1,234</div>
+            <div class="text" style="color: #333;">적립금</div>
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="graynumber">0</div>
+            <div class="text" style="color: #333;">사용 가능 쿠폰</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- 주문 처리 현황 제목 -->
+  <div class="order-title">
+    나의 주문처리 현황
+  </div>
+  <!-- 주문 처리 현황 내용 -->
+  <div style="display: flex; justify-content: center;">
+  <div class="ShipInfo">
+    <div class="shippingStatusContainer">
+
+      <div class="status">
+
+        <div class="item">
+          <div>
+            <div class="green number">6</div>
+            <div class="text" style="color: #333;">입금 전</div>
+          </div>
+          <div class="icon"> > </div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="number">0</div>
+            <div class="text" style="color: #333;">배송준비중</div>
+          </div>
+          <div class="icon"> > </div>
+        </div>
+        <div class="item">
+          <div>
+            <div class="green number">1</div>
+            <div class="text" style="color: #333;">배송중</div>
+            </div>
+            <div class=" icon"> > </div>
+          </div>
+          <div class="item">
+            <div>
+              <div class="green number">3</div>
+              <div class="text" style="color: #333;">배송완료</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 그리드 부분 -->
+  <div class=" grid-container">
+                <div class="box">
+                  <div>
+                    <div class="content">
+                      <h3>PROPILE</h3>
+                    </div>
+                    <div class="subTitle">회원 정보</div>
+                    <div class="bottom-text">고객님의 개인정보를 관리하는 공간입니다.</div>
+                  </div>
+                </div>
+                <div class="box">
+                  <div>
+                    <div class="content">
+                      <h3>ORDER</h3>
+                    </div>
+                    <div class="subTitle">주문 내역 조회</div>
+                    <div class="bottom-text">고객님께서 주문하신 상품의 주문내역을 확인하실 수 있습니다.</div>
+                  </div>
+                </div>
+                <div class="box">
+                  <div>
+                    <div class="content">
+                      <h3>WISHLIST</h3>
+                    </div>
+                    <div class="subTitle">관심 상품</div>
+                    <div class="bottom-text">관심상품으로 등록하신 상품의 목록을 보여드립니다.</div>
+                  </div>
+                </div>
+                <div class="box">
+                  <div>
+                    <div class="content">
+                      <h3>CART</h3>
+                    </div>
+                    <div class="subTitle">장바구니</div>
+                    <div class="bottom-text">장바구니에 담으신 상품의 목록을 보여드립니다.</div>
+                  </div>
+                </div>
+                <div class="box">
+                  <div>
+                    <div class="content">
+                      <h3>BOARD</h3>
+                    </div>
+                    <div class="subTitle">게시물 관리</div>
+                    <div class="bottom-text">고객님께서 작성하신 게시물을 관리하는 공간입니다.</div>
+                  </div>
+                </div>
+                <div class="box">
+                  <div>
+                    <div class="content">
+                      <h3>SUBSCRIPTION</h3>
+                    </div>
+                    <div class="subTitle">정기 배송 관리</div>
+                    <div class="bottom-text">고객님께서 신청하신 정기배송의 신청 정보 및 내역을 확인하실 수 있습니다.</div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <script>
+                function myFunction() {
+                  var x = document.getElementById("myTopnav"); if (x.className === "topnav") {x.className += " responsive";} else {x.className = "topnav";}
+                } </script>
+
+</body>
+<footer>
+  <div class="footer-container">
+    <div class="logo">
+      <img src="https://github.com/reoncord/testAppPrgm/blob/main/img/Logo.png?raw=true" alt="Logo" width="183px"
+        height="50">
+    </div>
+    <div class="info">
+      <div style="color: #1678F2;"><b>문의</b></div><br>
+      <div>hihello@sungkyul.ac.kr</div>
+      <div>010 - 1234 - 5678</div>
+      <div>경기도 안양시 만안구 성결대학로 53</div>
+    </div>
+  </div>
+  <p style="font-size: 15px; border-top: 1px solid gray; padding-top: 5px;">© 2023 HELPTH ME. All rights reserved.
+  </p>
+</footer>
+
+</html>
